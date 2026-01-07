@@ -297,3 +297,30 @@
 .is-mobile .aiche-settings .setting-item {
 	padding: 12px 0;
 }
+
+/* Mobile toolbar recording state */
+.aiche-is-recording .mobile-toolbar-option[aria-label*="Toggle Recording"],
+.aiche-is-recording .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] {
+	background: var(--text-error) !important;
+	color: white !important;
+	border-radius: 50%;
+	animation: aiche-pulse 1s ease-in-out infinite;
+}
+
+.aiche-is-recording .mobile-toolbar-option[aria-label*="Toggle Recording"] svg,
+.aiche-is-recording .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] svg {
+	color: white !important;
+}
+
+.aiche-is-processing .mobile-toolbar-option[aria-label*="Toggle Recording"],
+.aiche-is-processing .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] {
+	background: var(--interactive-accent) !important;
+	color: white !important;
+	border-radius: 50%;
+	animation: aiche-spin 1s linear infinite;
+}
+
+.aiche-is-processing .mobile-toolbar-option[aria-label*="Toggle Recording"] svg,
+.aiche-is-processing .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] svg {
+	color: white !important;
+}

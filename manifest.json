@@ -1,7 +1,7 @@
 {
 	"id": "aiche-voice",
 	"name": "AICHE Voice",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"minAppVersion": "1.0.0",
 	"description": "Voice-to-text transcription powered by AI. Click to record, speak naturally, get text in seconds.",
 	"author": "AICHE",
