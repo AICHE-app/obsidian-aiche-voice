@@ -1,10 +1,12 @@
 # AICHE Voice for Obsidian
 
-Speak into your notes. Polished text appears in seconds.
+Speak into your notes. Polished text in seconds.
+
+Part of [AICHE](https://aiche.app) — one subscription, voice-to-text everywhere: desktop apps, Obsidian, mobile (soon), Chrome (soon).
 
 ## What It Does
 
-Click record, speak naturally, get readable text with punctuation and grammar already handled. Not raw transcription — actual sentences you'd want to keep.
+Press record, speak naturally, get clean text with grammar and punctuation handled. Not raw transcription — readable sentences.
 
 ## Install
 
@@ -29,57 +31,38 @@ Click record, speak naturally, get readable text with punctuation and grammar al
 | Method | Action |
 |--------|--------|
 | Ribbon | Click microphone icon |
-| Hotkey | Set in Settings → Hotkeys → search "AICHE" |
+| Hotkey | Settings → Hotkeys → search "AICHE" |
 | Command | `Ctrl/Cmd + P` → "Toggle Recording" |
-| Status Bar | Click recording indicator |
-
-Right-click status bar for quick actions.
+| Status Bar | Click indicator, right-click for menu |
 
 ## Settings
 
 | Option | Description |
 |--------|-------------|
-| Polish text | Fix grammar and punctuation automatically |
-| Insert at cursor | Text appears at cursor, not end of note |
-| Show notifications | Notify when transcription completes |
-| Voice notes folder | Where new notes are created |
-| Attach audio | Save audio file with voice notes |
-| Organize by category | Sort into Work/Life/Ideas/Misc subfolders |
-
-## Hotkeys
-
-Configure in Settings → Hotkeys:
-
-- **Toggle Recording** — Start/stop recording
-- **Cancel Recording** — Discard without saving
-- **New Voice Note** — Create note and start recording
+| Polish text | Grammar and punctuation cleanup |
+| Insert at cursor | Text at cursor vs end of note |
+| Notifications | Show completion notices |
+| Voice notes folder | Auto-created notes location |
+| Attach audio | Embed audio with voice notes |
+| Category folders | Organize into Work/Life/Ideas/Misc |
 
 ## Privacy
 
-Audio is sent to AICHE servers for transcription. Audio files are deleted immediately after processing.
+Audio sent to AICHE servers, deleted immediately after transcription. Zero retention.
 
-**Collected:**
-- Audio (during processing only)
-- Transcribed text (stored with your account)
-- Usage metadata (timestamps, word counts)
+- Audio: processed and purged (not stored)
+- Text: stored with your account
+- Offline: encrypted locally (AES-GCM), deleted after upload
 
-**Not collected:**
-- Audio after transcription completes
-- Training data from your recordings
-- Data shared with third parties
-
-**Local storage:**
-- Offline recordings are encrypted locally (AES-GCM)
-- Auto-deleted after successful upload
-- Encryption keys derived from vault + device
-
-Full details: [Privacy Policy](https://aiche.app/privacy)
+[Privacy Policy](https://aiche.app/privacy)
 
 ## Pricing
 
-7-day free trial. $4.99/month unlimited.
+One AICHE subscription works everywhere — desktop, Obsidian, mobile, browser.
 
-[View Plans](https://aiche.app/pricing)
+7-day free trial. $4.99/month.
+
+[Start Free Trial](https://aiche.app)
 
 ## Support
 
