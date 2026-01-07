@@ -1,0 +1,253 @@
+/* AICHE Voice Plugin Styles */
+
+/* =========================
+   RIBBON ICON STATES
+   ========================= */
+
+/* Recording state - pulsing with red dot */
+.aiche-recording {
+	position: relative;
+	color: var(--text-error) !important;
+	animation: aiche-pulse 1s ease-in-out infinite;
+}
+
+.aiche-recording::after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 8px;
+	height: 8px;
+	background: #ff3b30;
+	border-radius: 50%;
+	animation: aiche-dot-pulse 1s ease-in-out infinite;
+	box-shadow: 0 0 4px #ff3b30;
+}
+
+@keyframes aiche-pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+	}
+}
+
+@keyframes aiche-dot-pulse {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.6;
+		transform: scale(0.85);
+	}
+}
+
+/* Paused state */
+.aiche-paused {
+	color: var(--text-warning) !important;
+}
+
+/* Processing state - spinning */
+.aiche-processing {
+	animation: aiche-spin 1s linear infinite;
+	color: var(--text-accent) !important;
+}
+
+@keyframes aiche-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Success state - green pop */
+.aiche-success {
+	color: var(--text-success) !important;
+	animation: aiche-success-pop 0.4s ease-out;
+}
+
+@keyframes aiche-success-pop {
+	0% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Error state - shake */
+.aiche-error {
+	animation: aiche-shake 0.5s ease-in-out;
+	color: var(--text-error) !important;
+}
+
+@keyframes aiche-shake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	20%, 60% {
+		transform: translateX(-3px);
+	}
+	40%, 80% {
+		transform: translateX(3px);
+	}
+}
+
+/* =========================
+   STATUS BAR STYLES
+   ========================= */
+
+.aiche-status-bar {
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.2s ease;
+	padding: 0 8px;
+	border-radius: 4px;
+}
+
+.aiche-status-bar:hover {
+	color: var(--text-accent);
+	background: var(--background-modifier-hover);
+}
+
+/* Recording state */
+.aiche-status-recording {
+	color: var(--text-error) !important;
+	font-weight: 600;
+	animation: aiche-status-pulse 1s ease-in-out infinite;
+}
+
+@keyframes aiche-status-pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.6;
+	}
+}
+
+/* Processing state */
+.aiche-status-processing {
+	color: var(--text-accent) !important;
+}
+
+/* Ready state */
+.aiche-status-ready {
+	color: var(--text-success);
+}
+
+/* Success state */
+.aiche-status-success {
+	color: var(--text-success) !important;
+	font-weight: 600;
+}
+
+/* Error state */
+.aiche-status-error {
+	color: var(--text-error) !important;
+	animation: aiche-shake 0.5s ease-in-out;
+}
+
+/* =========================
+   MODAL STYLES
+   ========================= */
+
+.modal-button-container {
+	display: flex;
+	gap: 8px;
+	margin-top: 16px;
+	justify-content: flex-end;
+}
+
+.aiche-connect-modal {
+	max-width: 400px;
+}
+
+.aiche-signin-btn {
+	font-size: 16px !important;
+}
+
+/* =========================
+   SETTINGS STYLES
+   ========================= */
+
+.aiche-settings h3 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding-bottom: 6px;
+}
+
+.aiche-settings .setting-item-description {
+	color: var(--text-muted);
+}
+
+/* =========================
+   WELCOME MODAL
+   ========================= */
+
+.aiche-welcome-modal {
+	max-width: 420px;
+}
+
+.aiche-welcome-modal h2 {
+	margin-bottom: 8px;
+}
+
+.aiche-welcome-guide {
+	background: var(--background-secondary);
+	border-radius: 8px;
+	padding: 16px;
+	margin: 16px 0;
+}
+
+.aiche-welcome-step {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 8px 0;
+}
+
+.aiche-welcome-step:not(:last-child) {
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.aiche-welcome-step-icon {
+	font-size: 18px;
+	width: 28px;
+	text-align: center;
+}
+
+.aiche-welcome-step-text {
+	flex: 1;
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+/* Screen reader only utility */
+.aiche-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Focus states for keyboard navigation */
+.aiche-status-bar:focus-visible {
+	outline: 2px solid var(--text-accent);
+	outline-offset: 2px;
+}
