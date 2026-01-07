@@ -251,3 +251,49 @@
 	outline: 2px solid var(--text-accent);
 	outline-offset: 2px;
 }
+
+/* =========================
+   MOBILE STYLES
+   ========================= */
+
+/* Larger touch targets on mobile */
+.is-mobile .aiche-status-bar {
+	padding: 8px 12px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+}
+
+/* Larger modal buttons on mobile */
+.is-mobile .modal-button-container button {
+	min-height: 44px;
+	padding: 12px 16px;
+}
+
+.is-mobile .aiche-connect-modal .mod-cta {
+	min-height: 48px;
+	font-size: 17px;
+}
+
+/* Larger consent checkbox tap target */
+.is-mobile .aiche-consent-checkbox {
+	min-height: 44px;
+}
+
+.is-mobile .aiche-consent-checkbox label {
+	padding: 12px;
+}
+
+/* Welcome modal adjustments for mobile */
+.is-mobile .aiche-welcome-modal {
+	max-width: 100%;
+}
+
+.is-mobile .aiche-welcome-step {
+	padding: 12px 0;
+}
+
+/* Settings adjustments for mobile */
+.is-mobile .aiche-settings .setting-item {
+	padding: 12px 0;
+}
