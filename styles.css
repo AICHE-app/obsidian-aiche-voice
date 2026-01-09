@@ -275,6 +275,35 @@
 	font-size: 17px;
 }
 
+/* Mobile connect modal - force center alignment */
+.is-mobile .aiche-connect-modal {
+	text-align: center !important;
+}
+
+.is-mobile .aiche-connect-modal h2,
+.is-mobile .aiche-connect-modal p,
+.is-mobile .aiche-connect-modal .setting-item-description {
+	text-align: center !important;
+}
+
+.is-mobile .aiche-connect-modal details {
+	text-align: center !important;
+}
+
+.is-mobile .aiche-connect-modal summary {
+	list-style: none !important;
+	text-align: center !important;
+}
+
+.is-mobile .aiche-connect-modal .modal-button-container {
+	flex-direction: column !important;
+	align-items: stretch !important;
+}
+
+.is-mobile .aiche-connect-modal .modal-button-container button {
+	width: 100% !important;
+}
+
 /* Larger consent checkbox tap target */
 .is-mobile .aiche-consent-checkbox {
 	min-height: 44px;
