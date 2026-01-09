@@ -168,6 +168,16 @@
 
 .aiche-connect-modal {
 	max-width: 400px;
+	margin: 0 auto;
+}
+
+/* Mobile: remove max-width constraint */
+.is-mobile .aiche-connect-modal {
+	max-width: none;
+	width: 100%;
+	margin: 0;
+	padding: 0 16px;
+	box-sizing: border-box;
 }
 
 .aiche-signin-btn {
