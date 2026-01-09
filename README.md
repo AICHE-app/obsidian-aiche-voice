@@ -2,11 +2,15 @@
 
 Speak into your notes. Polished text in seconds.
 
-Part of [AICHE](https://aiche.app) — one subscription, voice-to-text everywhere: desktop apps, Obsidian, mobile (soon), Chrome (soon).
+![AICHE Voice Demo](assets/demo.gif)
+
+Part of [AICHE](https://aiche.app) — one subscription, voice-to-text everywhere: desktop apps, Obsidian, mobile, browser.
 
 ## What It Does
 
 Press record, speak naturally, get clean text with grammar and punctuation handled. Not raw transcription — readable sentences.
+
+![Recording](assets/02-recording.png)
 
 ## Install
 
@@ -45,6 +49,8 @@ Press record, speak naturally, get clean text with grammar and punctuation handl
 | Voice notes folder | Auto-created notes location |
 | Attach audio | Embed audio with voice notes |
 | Category folders | Organize into Work/Life/Ideas/Misc |
+
+![Settings](assets/06-settings.png)
 
 ## Privacy
 
