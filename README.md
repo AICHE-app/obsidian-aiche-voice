@@ -66,7 +66,7 @@ Audio sent to AICHE servers, deleted immediately after transcription. Zero reten
 
 One AICHE subscription works everywhere — desktop, Obsidian, mobile, browser.
 
-7-day free trial. $4.99/month.
+7-day free trial. Plans start at $4.99/month.
 
 [Start Free Trial](https://aiche.app)
 
