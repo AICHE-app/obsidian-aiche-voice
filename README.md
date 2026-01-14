@@ -4,11 +4,11 @@ Speak into your notes. Polished text in seconds.
 
 ![AICHE Voice Demo](assets/demo.gif)
 
-Part of [AICHE](https://aiche.app) — one subscription, voice-to-text everywhere: desktop apps, Obsidian, mobile, browser.
+Part of [AICHE](https://aiche.app) - one subscription, voice-to-text everywhere: desktop apps, Obsidian, mobile, browser.
 
 ## What It Does
 
-Press record, speak naturally, get clean text with grammar and punctuation handled. Not raw transcription — readable sentences.
+Press record, speak naturally, get clean text with grammar and punctuation handled. Not raw transcription - readable sentences.
 
 ![Recording](assets/02-recording.png)
 
@@ -64,7 +64,7 @@ Audio sent to AICHE servers, deleted immediately after transcription. Zero reten
 
 ## Pricing
 
-One AICHE subscription works everywhere — desktop, Obsidian, mobile, browser.
+One AICHE subscription works everywhere - desktop, Obsidian, mobile, browser.
 
 7-day free trial. Plans start at $4.99/month.
 
