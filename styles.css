@@ -249,6 +249,178 @@
 }
 
 /* =========================
+   UPGRADE MODALS
+   ========================= */
+
+.aiche-upgrade-modal-container {
+	max-width: 380px;
+	width: 380px;
+}
+
+.aiche-upgrade-modal {
+	text-align: center;
+}
+
+.aiche-upgrade-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	margin: 0 auto 12px;
+	border-radius: 50%;
+	background: var(--background-secondary);
+	border: 1.5px solid var(--background-modifier-border);
+}
+
+.aiche-upgrade-icon svg {
+	width: 22px;
+	height: 22px;
+	color: var(--text-muted);
+}
+
+.aiche-upgrade-modal h2 {
+	margin: 0 0 4px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.aiche-upgrade-subtitle {
+	color: var(--text-muted);
+	font-size: 14px;
+	margin: 0 0 16px;
+	padding: 0;
+	border: none;
+	text-align: center;
+	line-height: 1.4;
+}
+
+.aiche-upgrade-features {
+	background: var(--background-secondary);
+	border-radius: 6px;
+	padding: 8px 14px;
+	margin-bottom: 16px;
+	text-align: left;
+}
+
+.aiche-upgrade-feature {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 5px 0;
+	font-size: 13px;
+	color: var(--text-muted);
+}
+
+.aiche-upgrade-feature-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	color: var(--interactive-accent);
+}
+
+.aiche-upgrade-feature-icon svg {
+	width: 14px;
+	height: 14px;
+}
+
+.aiche-upgrade-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.aiche-upgrade-cta {
+	width: 100%;
+	padding: 10px 16px !important;
+	font-size: 15px !important;
+	font-weight: 600 !important;
+	border-radius: 6px !important;
+}
+
+.aiche-upgrade-later {
+	width: 100%;
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	color: var(--text-faint);
+	cursor: pointer;
+	padding: 8px;
+	font-size: 13px;
+}
+
+.aiche-upgrade-later:hover {
+	color: var(--text-muted);
+	background: none !important;
+	box-shadow: none !important;
+}
+
+/* =========================
+   SETTINGS UPGRADE BANNER
+   ========================= */
+
+.aiche-upgrade-banner {
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 16px 20px;
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	text-align: left;
+}
+
+.aiche-upgrade-banner-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--background-primary);
+}
+
+.aiche-upgrade-banner-icon svg {
+	width: 20px;
+	height: 20px;
+	color: var(--text-muted);
+}
+
+.aiche-upgrade-banner-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.aiche-upgrade-banner-title {
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--text-normal);
+	margin-bottom: 2px;
+}
+
+.aiche-upgrade-banner-desc {
+	font-size: 12px;
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.aiche-upgrade-banner-features {
+	display: none;
+}
+
+.aiche-upgrade-banner-btn {
+	flex-shrink: 0;
+	padding: 6px 20px !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+}
+
+/* =========================
    ACCESSIBILITY
    ========================= */
 
@@ -344,6 +516,21 @@
 /* Settings adjustments for mobile */
 .is-mobile .aiche-settings .setting-item {
 	padding: 12px 0;
+}
+
+/* Upgrade modal mobile */
+.is-mobile .aiche-upgrade-modal-container {
+	max-width: none;
+	width: auto;
+}
+
+.is-mobile .aiche-upgrade-cta {
+	min-height: 48px;
+	font-size: 17px !important;
+}
+
+.is-mobile .aiche-upgrade-later {
+	min-height: 44px;
 }
 
 /* Mobile toolbar recording state */
