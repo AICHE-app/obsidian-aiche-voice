@@ -298,15 +298,17 @@
 .aiche-upgrade-features {
 	background: var(--background-secondary);
 	border-radius: 6px;
-	padding: 8px 14px;
-	margin-bottom: 16px;
-	text-align: left;
+	padding: 10px 14px;
+	margin-bottom: 12px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2px 8px;
 }
 
 .aiche-upgrade-feature {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 8px;
 	padding: 5px 0;
 	font-size: 13px;
 	color: var(--text-muted);
@@ -317,20 +319,29 @@
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	width: 18px;
-	height: 18px;
+	width: 16px;
+	height: 16px;
 	color: var(--interactive-accent);
 }
 
 .aiche-upgrade-feature-icon svg {
-	width: 14px;
-	height: 14px;
+	width: 13px;
+	height: 13px;
+}
+
+.aiche-upgrade-safety {
+	color: var(--text-faint);
+	font-size: 12px;
+	text-align: center;
+	margin: 0 0 14px;
+	padding: 0;
+	border: none;
 }
 
 .aiche-upgrade-buttons {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 6px;
 }
 
 .aiche-upgrade-cta {
@@ -348,7 +359,7 @@
 	box-shadow: none !important;
 	color: var(--text-faint);
 	cursor: pointer;
-	padding: 8px;
+	padding: 6px;
 	font-size: 13px;
 }
 
