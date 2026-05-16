@@ -1,9 +1,9 @@
 {
 	"id": "aiche-voice",
 	"name": "AICHE Voice",
-	"version": "1.0.37",
+	"version": "1.0.38",
 	"minAppVersion": "1.4.0",
-	"description": "Turn speech into clean Obsidian notes with voice recording, punctuation, and cleanup.",
+	"description": "Turn speech into clean notes on desktop and mobile, with punctuation and cleanup.",
 	"author": "AICHE",
 	"authorUrl": "https://aiche.app",
 	"isDesktopOnly": false
