@@ -5,9 +5,12 @@
    ========================= */
 
 /* Recording state - pulsing with red dot */
+.workspace-ribbon .aiche-recording,
+.side-dock-ribbon-action.aiche-recording {
+	color: var(--text-error);
+}
 .aiche-recording {
 	position: relative;
-	color: var(--text-error) !important;
 	animation: aiche-pulse 1s ease-in-out infinite;
 }
 
@@ -45,14 +48,18 @@
 }
 
 /* Paused state */
-.aiche-paused {
-	color: var(--text-warning) !important;
+.workspace-ribbon .aiche-paused,
+.side-dock-ribbon-action.aiche-paused {
+	color: var(--text-warning);
 }
 
 /* Processing state - spinning */
+.workspace-ribbon .aiche-processing,
+.side-dock-ribbon-action.aiche-processing {
+	color: var(--text-accent);
+}
 .aiche-processing {
 	animation: aiche-spin 1s linear infinite;
-	color: var(--text-accent) !important;
 }
 
 @keyframes aiche-spin {
@@ -65,8 +72,11 @@
 }
 
 /* Success state - green pop */
+.workspace-ribbon .aiche-success,
+.side-dock-ribbon-action.aiche-success {
+	color: var(--text-success);
+}
 .aiche-success {
-	color: var(--text-success) !important;
 	animation: aiche-success-pop 0.4s ease-out;
 }
 
@@ -83,9 +93,12 @@
 }
 
 /* Error state - shake */
+.workspace-ribbon .aiche-error,
+.side-dock-ribbon-action.aiche-error {
+	color: var(--text-error);
+}
 .aiche-error {
 	animation: aiche-shake 0.5s ease-in-out;
-	color: var(--text-error) !important;
 }
 
 @keyframes aiche-shake {
@@ -118,8 +131,10 @@
 }
 
 /* Recording state */
+.status-bar .aiche-status-recording {
+	color: var(--text-error);
+}
 .aiche-status-recording {
-	color: var(--text-error) !important;
 	font-weight: 600;
 	animation: aiche-status-pulse 1s ease-in-out infinite;
 }
@@ -134,8 +149,8 @@
 }
 
 /* Processing state */
-.aiche-status-processing {
-	color: var(--text-accent) !important;
+.status-bar .aiche-status-processing {
+	color: var(--text-accent);
 }
 
 /* Ready state */
@@ -144,14 +159,18 @@
 }
 
 /* Success state */
+.status-bar .aiche-status-success {
+	color: var(--text-success);
+}
 .aiche-status-success {
-	color: var(--text-success) !important;
 	font-weight: 600;
 }
 
 /* Error state */
+.status-bar .aiche-status-error {
+	color: var(--text-error);
+}
 .aiche-status-error {
-	color: var(--text-error) !important;
 	animation: aiche-shake 0.5s ease-in-out;
 }
 
@@ -171,17 +190,18 @@
 	margin: 0 auto;
 }
 
-/* Mobile: remove max-width constraint */
+/* Mobile: remove max-width constraint, force center alignment */
 .is-mobile .aiche-connect-modal {
 	max-width: none;
 	width: 100%;
 	margin: 0;
 	padding: 0 16px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
-.aiche-signin-btn {
-	font-size: 16px !important;
+.modal .aiche-signin-btn {
+	font-size: 16px;
 }
 
 /* =========================
@@ -344,29 +364,29 @@
 	gap: 6px;
 }
 
-.aiche-upgrade-cta {
+.aiche-upgrade-modal .aiche-upgrade-cta {
 	width: 100%;
-	padding: 10px 16px !important;
-	font-size: 15px !important;
-	font-weight: 600 !important;
-	border-radius: 6px !important;
+	padding: 10px 16px;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 6px;
 }
 
-.aiche-upgrade-later {
+.aiche-upgrade-modal .aiche-upgrade-later {
 	width: 100%;
-	background: none !important;
-	border: none !important;
-	box-shadow: none !important;
+	background: none;
+	border: none;
+	box-shadow: none;
 	color: var(--text-faint);
 	cursor: pointer;
 	padding: 6px;
 	font-size: 13px;
 }
 
-.aiche-upgrade-later:hover {
+.aiche-upgrade-modal .aiche-upgrade-later:hover {
 	color: var(--text-muted);
-	background: none !important;
-	box-shadow: none !important;
+	background: none;
+	box-shadow: none;
 }
 
 /* =========================
@@ -424,11 +444,11 @@
 	display: none;
 }
 
-.aiche-upgrade-banner-btn {
+.aiche-upgrade-banner .aiche-upgrade-banner-btn {
 	flex-shrink: 0;
-	padding: 6px 20px !important;
-	font-size: 13px !important;
-	font-weight: 600 !important;
+	padding: 6px 20px;
+	font-size: 13px;
+	font-weight: 600;
 }
 
 /* =========================
@@ -477,33 +497,28 @@
 	font-size: 17px;
 }
 
-/* Mobile connect modal - force center alignment */
-.is-mobile .aiche-connect-modal {
-	text-align: center !important;
-}
-
 .is-mobile .aiche-connect-modal h2,
 .is-mobile .aiche-connect-modal p,
 .is-mobile .aiche-connect-modal .setting-item-description {
-	text-align: center !important;
+	text-align: center;
 }
 
 .is-mobile .aiche-connect-modal details {
-	text-align: center !important;
+	text-align: center;
 }
 
 .is-mobile .aiche-connect-modal summary {
-	list-style: none !important;
-	text-align: center !important;
+	list-style: none;
+	text-align: center;
 }
 
 .is-mobile .aiche-connect-modal .modal-button-container {
-	flex-direction: column !important;
-	align-items: stretch !important;
+	flex-direction: column;
+	align-items: stretch;
 }
 
 .is-mobile .aiche-connect-modal .modal-button-container button {
-	width: 100% !important;
+	width: 100%;
 }
 
 /* Larger consent checkbox tap target */
@@ -535,9 +550,9 @@
 	width: auto;
 }
 
-.is-mobile .aiche-upgrade-cta {
+.is-mobile .aiche-upgrade-modal .aiche-upgrade-cta {
 	min-height: 48px;
-	font-size: 17px !important;
+	font-size: 17px;
 }
 
 .is-mobile .aiche-upgrade-later {
@@ -547,26 +562,26 @@
 /* Mobile toolbar recording state */
 .aiche-is-recording .mobile-toolbar-option[aria-label*="Toggle Recording"],
 .aiche-is-recording .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] {
-	background: var(--text-error) !important;
-	color: white !important;
+	background: var(--text-error);
+	color: white;
 	border-radius: 50%;
 	animation: aiche-pulse 1s ease-in-out infinite;
 }
 
 .aiche-is-recording .mobile-toolbar-option[aria-label*="Toggle Recording"] svg,
 .aiche-is-recording .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] svg {
-	color: white !important;
+	color: white;
 }
 
 .aiche-is-processing .mobile-toolbar-option[aria-label*="Toggle Recording"],
 .aiche-is-processing .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] {
-	background: var(--interactive-accent) !important;
-	color: white !important;
+	background: var(--interactive-accent);
+	color: white;
 	border-radius: 50%;
 	animation: aiche-spin 1s linear infinite;
 }
 
 .aiche-is-processing .mobile-toolbar-option[aria-label*="Toggle Recording"] svg,
 .aiche-is-processing .mobile-toolbar-option[aria-label*="AICHE Voice: Toggle Recording"] svg {
-	color: white !important;
+	color: white;
 }
