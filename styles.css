@@ -773,6 +773,92 @@
 	min-height: 40px;
 }
 
+/* Mobile toolbar live recording state (class set on the button in JS) */
+/* Steady red mic — no blink. */
+.aiche-toolbar-recording,
+.aiche-toolbar-recording svg {
+	color: var(--text-error);
+}
+
+/* Processing: spinning loader, accent colour. */
+.aiche-toolbar-processing,
+.aiche-toolbar-processing svg {
+	color: var(--text-accent);
+}
+
+.aiche-toolbar-processing svg {
+	animation: aiche-spin 1s linear infinite;
+}
+
+/* Floating mobile record button. Idle = native accent (purple); JS keeps it
+   above the keyboard. */
+.aiche-fab {
+	position: fixed;
+	right: calc(16px + env(safe-area-inset-right, 0px));
+	bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+	z-index: 25;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	transition: bottom 0.18s ease, background-color 0.18s ease;
+}
+
+.aiche-fab svg {
+	width: 24px;
+	height: 24px;
+	color: var(--text-on-accent);
+	position: relative;
+	z-index: 1;
+}
+
+/* Recording: steady red with a single clean pulse ring — alive but not foggy. */
+.aiche-fab-recording {
+	background: var(--text-error);
+}
+
+.aiche-fab-recording::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background: var(--text-error);
+	z-index: -1;
+	animation: aiche-fab-pulse 2s ease-out infinite;
+}
+
+.aiche-fab-recording svg {
+	color: white;
+}
+
+/* Processing: accent button with a spinning loader (no pulse ring). */
+.aiche-fab-processing {
+	background: var(--interactive-accent);
+}
+
+.aiche-fab-processing svg {
+	color: var(--text-on-accent);
+	animation: aiche-spin 1s linear infinite;
+}
+
+@keyframes aiche-fab-pulse {
+	0% {
+		transform: scale(1);
+		opacity: 0.45;
+	}
+	100% {
+		transform: scale(1.85);
+		opacity: 0;
+	}
+}
+
 /* =========================
    HOTKEYS NOTE (settings)
    ========================= */
