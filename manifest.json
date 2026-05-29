@@ -1,7 +1,7 @@
 {
 	"id": "aiche-voice",
 	"name": "AICHE Voice",
-	"version": "1.0.42",
+	"version": "1.0.43",
 	"minAppVersion": "1.4.0",
 	"description": "Turn speech into clean notes on desktop and mobile, with punctuation and cleanup.",
 	"author": "AICHE",

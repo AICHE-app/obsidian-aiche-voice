@@ -790,14 +790,14 @@
 	animation: aiche-spin 1s linear infinite;
 }
 
-/* Floating mobile record button. Idle = native accent (purple); JS keeps it
-   above the keyboard. */
+/* Floating record button. Idle = native accent (purple). Desktop: bottom-right
+   above the status bar. Mobile: lifted higher, and JS keeps it above the keyboard. */
 .aiche-fab {
 	position: fixed;
-	right: calc(16px + env(safe-area-inset-right, 0px));
-	bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-	width: 52px;
-	height: 52px;
+	right: 18px;
+	bottom: 38px;
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -809,6 +809,13 @@
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
 	transition: bottom 0.18s ease, background-color 0.18s ease;
+}
+
+.is-mobile .aiche-fab {
+	right: calc(16px + env(safe-area-inset-right, 0px));
+	bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+	width: 52px;
+	height: 52px;
 }
 
 .aiche-fab svg {
