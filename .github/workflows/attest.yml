@@ -8,6 +8,9 @@ on:
 
 jobs:
   attest:
+    # Only run in the public repo (where the built assets exist). In the private
+    # source repo there is no main.js/styles.css to attest, so skip instead of failing.
+    if: github.repository == 'AICHE-app/obsidian-aiche-voice'
     runs-on: ubuntu-latest
     permissions:
       id-token: write

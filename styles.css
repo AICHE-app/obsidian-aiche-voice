@@ -876,3 +876,58 @@
 	line-height: 1.5;
 	margin: 2px 0 14px;
 }
+
+/* =========================
+   COLLAPSIBLE SETTINGS SECTIONS
+   ========================= */
+
+.aiche-settings-section {
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.aiche-settings-section-summary {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	padding: 12px 0;
+	list-style: none;
+	user-select: none;
+}
+
+.aiche-settings-section-summary::-webkit-details-marker {
+	display: none;
+}
+
+.aiche-settings-section-summary::before {
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 5px solid var(--text-muted);
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	transition: transform 0.12s ease;
+}
+
+.aiche-settings-section[open] > .aiche-settings-section-summary::before {
+	transform: rotate(90deg);
+}
+
+.aiche-settings-section-title {
+	font-size: var(--font-ui-medium);
+	font-weight: var(--font-semibold);
+	color: var(--text-normal);
+}
+
+.aiche-settings-section-body {
+	padding-bottom: 6px;
+}
+
+.aiche-settings-subheading {
+	margin: 14px 0 2px;
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--text-muted);
+}
