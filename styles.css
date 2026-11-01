@@ -200,8 +200,136 @@
 	text-align: center;
 }
 
-.modal .aiche-signin-btn {
+.aiche-connect-modal {
+	text-align: center;
+}
+
+.aiche-connect-modal h2 {
+	text-align: center;
+}
+
+.is-mobile .modal.aiche-connect-modal-container {
+	padding: 0;
+	margin: 0 auto;
+}
+
+.is-mobile .modal.aiche-connect-modal-container .aiche-connect-modal {
+	padding-left: 16px;
+	padding-right: 16px;
+	margin: 0;
+	width: 100%;
+	max-width: none;
+	box-sizing: border-box;
+}
+
+.aiche-connect-modal .aiche-connect-error {
+	margin-bottom: 12px;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: center;
+	color: var(--text-error);
+}
+
+.modal .aiche-connect-modal .aiche-signin-btn {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 16px;
 	font-size: 16px;
+}
+
+.aiche-connect-modal .aiche-connect-helper {
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+	color: var(--text-muted);
+}
+
+.aiche-connect-modal .aiche-divider {
+	position: relative;
+	margin: 20px 0;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.aiche-connect-modal .aiche-divider span {
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0 10px;
+	font-size: 12px;
+	color: var(--text-muted);
+	background: var(--modal-background);
+}
+
+.aiche-connect-modal .aiche-manual-section {
+	width: 100%;
+	text-align: center;
+}
+
+.aiche-connect-modal .aiche-manual-toggle {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 13px;
+	color: var(--text-muted);
+}
+
+.aiche-connect-modal .aiche-manual-content {
+	margin-top: 12px;
+}
+
+.aiche-connect-modal .aiche-manual-content p {
+	text-align: center;
+}
+
+.aiche-connect-modal .aiche-code-input {
+	width: 220px;
+	text-transform: uppercase;
+}
+
+/* Phones split a setting row's controls evenly; the code needs the room, the button doesn't. */
+.is-phone .modal .aiche-connect-modal .setting-item-control {
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.is-phone .modal .aiche-connect-modal .setting-item-control .aiche-code-input {
+	flex: 1 1 auto;
+	min-width: 0;
+	width: auto;
+}
+
+.is-phone .modal .aiche-connect-modal .setting-item-control button {
+	flex: 0 0 auto;
+	width: auto;
+}
+
+.aiche-connect-modal .modal-button-container.aiche-connect-buttons {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.aiche-connect-modal .aiche-connect-buttons button {
+	width: 100%;
+}
+
+.aiche-connect-modal .aiche-connect-policy {
+	margin-top: 16px;
+	font-size: 12px;
+	text-align: center;
+	color: var(--text-muted);
+}
+
+.aiche-connect-modal .aiche-connect-policy a,
+.aiche-welcome-privacy a {
+	color: var(--interactive-accent);
+	text-decoration: none;
+}
+
+.is-mobile .aiche-upgrade-modal {
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 /* =========================
@@ -549,15 +677,6 @@
 	width: 100%;
 }
 
-/* Larger consent checkbox tap target */
-.is-mobile .aiche-consent-checkbox {
-	min-height: 44px;
-}
-
-.is-mobile .aiche-consent-checkbox label {
-	padding: 12px;
-}
-
 /* Welcome modal adjustments for mobile */
 .is-mobile .aiche-welcome-modal {
 	max-width: 100%;
@@ -637,6 +756,9 @@
 
 .aiche-queue-title {
 	margin: 0;
+	font-size: var(--font-ui-medium);
+	font-weight: var(--font-semibold);
+	color: var(--text-normal);
 }
 
 .aiche-queue-summary {
@@ -818,6 +940,11 @@
 	height: 52px;
 }
 
+/* Keyboard up: just above a typical iPhone keyboard and toolbar. */
+.is-mobile .aiche-fab.is-raised {
+	bottom: 44%;
+}
+
 .aiche-fab svg {
 	width: 24px;
 	height: 24px;
@@ -930,4 +1057,533 @@
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	color: var(--text-muted);
+}
+
+/* =========================
+   ONBOARDING
+   One window size for every screen, so the main button never moves.
+   ========================= */
+
+.modal.aiche-onboarding {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+body:not(.is-mobile) .modal.aiche-onboarding {
+	width: min(600px, calc(100vw - 32px));
+	height: min(620px, calc(100vh - 48px));
+}
+
+/* Android leaves env(safe-area-inset-*) at 0; Obsidian's own variables carry the bars. */
+.is-mobile .modal.aiche-onboarding {
+	--aiche-safe-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+	--aiche-safe-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+	padding: 0;
+	margin: calc(var(--aiche-safe-top) + 8px) auto calc(var(--aiche-safe-bottom) + 8px);
+	height: calc(100dvh - var(--aiche-safe-top) - var(--aiche-safe-bottom) - 16px);
+	max-height: none;
+}
+
+.modal.aiche-onboarding > .modal-content {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.is-mobile .modal.aiche-onboarding > .modal-content {
+	padding-left: 16px;
+	padding-right: 16px;
+	width: 100%;
+	max-width: none;
+	box-sizing: border-box;
+}
+
+.modal.aiche-onboarding .aiche-onb-footer {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-top: 14px;
+	margin-top: 4px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.is-mobile .modal.aiche-onboarding .aiche-onb-footer {
+	padding: 12px 16px;
+}
+
+.modal.aiche-onboarding .aiche-onb-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.modal.aiche-onboarding .aiche-onb-skip {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: var(--text-muted);
+	padding: 6px 0;
+	cursor: pointer;
+}
+
+.modal.aiche-onboarding .aiche-onb-next {
+	min-width: 104px;
+}
+
+.modal.aiche-onboarding .aiche-onb-next:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.modal.aiche-onboarding .aiche-onb-body {
+	flex: 0 0 auto;
+}
+
+.modal.aiche-onboarding .aiche-onb-body.is-centered {
+	flex: none;
+	margin: auto 0;
+}
+
+.modal.aiche-onboarding .aiche-onb-progress {
+	flex: 0 0 auto;
+	display: flex;
+	gap: 4px;
+	margin: 2px 40px 18px 0;
+}
+
+/* Clear of the round close button phones draw in the corner. */
+.is-mobile .modal.aiche-onboarding .aiche-onb-progress {
+	margin-right: 56px;
+}
+
+.modal.aiche-onboarding .aiche-onb-progress-seg {
+	flex: 1;
+	height: 3px;
+	border-radius: 2px;
+	overflow: hidden;
+	background: var(--background-modifier-border);
+}
+
+.modal.aiche-onboarding .aiche-onb-progress-fill {
+	height: 100%;
+	background: var(--interactive-accent);
+	transform-origin: left center;
+}
+
+.modal.aiche-onboarding .aiche-onb-title {
+	margin: 0 0 4px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--text-normal);
+}
+
+.modal.aiche-onboarding .aiche-onb-sub {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.45;
+	color: var(--text-muted);
+}
+
+.modal.aiche-onboarding .aiche-onb-gap {
+	margin-top: 16px;
+}
+
+.modal.aiche-onboarding .aiche-onb-grid {
+	display: grid;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+.modal.aiche-onboarding .aiche-onb-grid.mod-two {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.modal.aiche-onboarding .aiche-onb-grid.mod-fill {
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+}
+
+.modal.aiche-onboarding .aiche-onb-choice {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 12px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-sizing: border-box;
+	min-width: 0;
+	border: 1px solid var(--background-modifier-border);
+	background: transparent;
+	transition:
+		border-color 0.12s ease,
+		background 0.12s ease;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice:hover {
+	border-color: var(--interactive-accent-hover, var(--interactive-accent));
+}
+
+.modal.aiche-onboarding .aiche-onb-choice:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice.is-selected {
+	border-color: var(--interactive-accent);
+	background: color-mix(in srgb, var(--interactive-accent) 9%, transparent);
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-icon {
+	flex: 0 0 auto;
+	display: grid;
+	place-items: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 8px;
+	color: var(--interactive-accent);
+	background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+}
+
+.modal.aiche-onboarding .aiche-onb-choice.is-selected .aiche-onb-choice-icon {
+	color: var(--text-on-accent);
+	background: var(--interactive-accent);
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-icon svg {
+	width: 16px;
+	height: 16px;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-text {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-label {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.modal.aiche-onboarding .aiche-onb-choice-sub {
+	margin-top: 2px;
+	font-size: 12px;
+	line-height: 1.4;
+	color: var(--text-muted);
+}
+
+.modal.aiche-onboarding .aiche-onb-mark {
+	flex: 0 0 auto;
+	margin-top: 1px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	border: 1.5px solid var(--text-faint);
+	background: transparent;
+	color: var(--text-on-accent);
+}
+
+.modal.aiche-onboarding .aiche-onb-choice.is-selected .aiche-onb-mark {
+	border: none;
+	background: var(--interactive-accent);
+}
+
+.modal.aiche-onboarding .aiche-onb-mark svg {
+	width: 11px;
+	height: 11px;
+	stroke-width: 3;
+}
+
+/* What you say, then what lands in the note. A tint, so it shows on phones,
+   where the modal itself is painted in --background-secondary. */
+.modal.aiche-onboarding .aiche-onb-card {
+	padding: 14px 16px;
+	border-radius: 10px;
+	background: var(--background-modifier-hover);
+}
+
+.modal.aiche-onboarding .aiche-onb-card-label {
+	margin-bottom: 2px;
+	font-size: 11px;
+	color: var(--text-faint);
+}
+
+.modal.aiche-onboarding .aiche-onb-card-label.mod-out {
+	margin: 12px 0 4px;
+}
+
+.modal.aiche-onboarding .aiche-onb-said {
+	font-size: 13px;
+	line-height: 1.45;
+	font-style: italic;
+	color: var(--text-muted);
+}
+
+.modal.aiche-onboarding .aiche-onb-out {
+	border-left: 2px solid var(--interactive-accent);
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--text-normal);
+}
+
+.modal.aiche-onboarding .aiche-onb-out.mod-tall {
+	min-height: 66px;
+}
+
+.modal.aiche-onboarding .aiche-onb-md-heading {
+	margin-bottom: 2px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.modal.aiche-onboarding .aiche-onb-md-list {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.modal.aiche-onboarding .aiche-onb-toggle-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 10px;
+	padding: 6px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--background-modifier-border);
+	font-size: 14px;
+}
+
+/* The small note pictures on the choice tiles. */
+.modal.aiche-onboarding .aiche-onb-mini {
+	position: relative;
+	height: 84px;
+	padding: 10px 12px;
+	box-sizing: border-box;
+	border-radius: 8px;
+	overflow: hidden;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.modal.aiche-onboarding .aiche-onb-mini.mod-tall {
+	height: 96px;
+}
+
+.modal.aiche-onboarding .aiche-onb-bar {
+	flex: 0 0 auto;
+	height: 5px;
+	width: var(--aiche-bar-width, 60%);
+	border-radius: 3px;
+	background: var(--background-modifier-border);
+}
+
+.modal.aiche-onboarding .aiche-onb-bar.mod-accent {
+	background: var(--interactive-accent);
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-line {
+	font-size: 12px;
+	line-height: 1.4;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-words {
+	border-radius: 3px;
+	padding: 0 3px;
+	background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-tail {
+	color: var(--text-faint);
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-caret {
+	display: inline-block;
+	width: 2px;
+	height: 13px;
+	margin-left: 1px;
+	vertical-align: text-bottom;
+	background: var(--interactive-accent);
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-fab {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.modal.aiche-onboarding .aiche-onb-mini-fab svg {
+	width: 15px;
+	height: 15px;
+}
+
+/* Opening and closing screens. */
+.modal.aiche-onboarding .aiche-onb-badge {
+	width: 52px;
+	height: 52px;
+	margin: 8px auto 16px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	box-shadow: 0 0 0 8px color-mix(in srgb, var(--interactive-accent) 14%, transparent);
+}
+
+.modal.aiche-onboarding .aiche-onb-badge svg {
+	width: 24px;
+	height: 24px;
+}
+
+.modal.aiche-onboarding .aiche-onb-hero-title {
+	margin: 0 0 6px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.modal.aiche-onboarding .aiche-onb-hero-text {
+	margin: 0 auto 18px;
+	max-width: 400px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.modal.aiche-onboarding .aiche-onb-hero-text.mod-muted {
+	color: var(--text-muted);
+}
+
+.modal.aiche-onboarding .aiche-onb-hero-text.mod-tight {
+	margin-bottom: 4px;
+}
+
+.modal.aiche-onboarding .aiche-onb-hero-note {
+	text-align: center;
+	font-size: 13px;
+	color: var(--text-muted);
+}
+
+.modal.aiche-onboarding .aiche-onb-terms {
+	margin-top: 18px;
+	font-size: 11px;
+	text-align: center;
+	color: var(--text-faint);
+}
+
+.modal.aiche-onboarding .aiche-onb-terms a {
+	color: var(--text-muted);
+}
+
+/* =========================
+   LIVE DICTATION PREVIEW
+   ========================= */
+
+.cm-editor .aiche-live-preview {
+	border-radius: 4px;
+	padding: 0 3px;
+	background-image:
+		linear-gradient(
+			90deg,
+			transparent,
+			color-mix(in srgb, var(--interactive-accent) 22%, transparent),
+			transparent
+		),
+		linear-gradient(
+			color-mix(in srgb, var(--interactive-accent) 10%, transparent),
+			color-mix(in srgb, var(--interactive-accent) 10%, transparent)
+		);
+	background-size: 40% 100%, 100% 100%;
+	background-repeat: no-repeat;
+	/* The shimmer animates this, so it must stay a plain declaration. */
+	background-position: -60% 0, 0 0;
+	transition: opacity 0.3s ease;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+.cm-editor .aiche-live-preview.is-block {
+	display: block;
+	margin-top: 4px;
+}
+
+.cm-editor .aiche-live-preview.is-finishing {
+	opacity: 0.75;
+}
+
+.cm-editor .aiche-live-word {
+	display: inline-block;
+	position: relative;
+	border-radius: 3px;
+	color: var(--text-normal);
+	transition: color 0.25s ease-out;
+}
+
+.cm-editor .aiche-live-word.is-tail {
+	color: var(--text-faint);
+}
+
+/* Width and margin are plain declarations: the fold animation moves both. */
+.cm-editor .aiche-live-word.aiche-live-leaving {
+	width: var(--aiche-word-width);
+	white-space: nowrap;
+	clip-path: inset(0 0 0 0);
+}
+
+.cm-editor .aiche-live-word.aiche-live-leaving.mod-front {
+	margin-right: 0.25em;
+}
+
+.cm-editor .aiche-live-word.aiche-live-leaving.mod-back {
+	margin-left: 0.25em;
+}
+
+.cm-editor .aiche-live-ghost {
+	position: absolute;
+	left: 0;
+	top: 0;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+.cm-editor .aiche-live-strike {
+	position: absolute;
+	left: 0;
+	top: 56%;
+	width: 100%;
+	height: 1.5px;
+	border-radius: 1px;
+	background: currentColor;
+	transform-origin: left center;
+	pointer-events: none;
 }
