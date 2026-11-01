@@ -1528,8 +1528,6 @@ body:not(.is-mobile) .modal.aiche-onboarding {
 	/* The shimmer animates this, so it must stay a plain declaration. */
 	background-position: -60% 0, 0 0;
 	transition: opacity 0.3s ease;
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
 }
 
 .cm-editor .aiche-live-preview.is-block {
@@ -1557,7 +1555,7 @@ body:not(.is-mobile) .modal.aiche-onboarding {
 .cm-editor .aiche-live-word.aiche-live-leaving {
 	width: var(--aiche-word-width);
 	white-space: nowrap;
-	clip-path: inset(0 0 0 0);
+	overflow: clip;
 }
 
 .cm-editor .aiche-live-word.aiche-live-leaving.mod-front {
